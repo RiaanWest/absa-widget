@@ -18,7 +18,7 @@ For more installation notes, refer to the [Install gulp](#install-gulp) section 
 
 ### Install gulp
 
-Building the theme requires [node.js](http://nodejs.org/download/). We recommend you update to the latest version of npm: `npm install -g npm@latest`.
+Building the assets requires [node.js](http://nodejs.org/download/). It's recommended that you update to the latest version of npm: `npm install -g npm@latest`.
 
 From the command line:
 

@@ -7,9 +7,29 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="assets/styles/main.css">
+    <link rel="stylesheet" href="dist/styles/main.css">
+    <script src="dist/js/vendor/vue.js"></script>
   </head>
   <body>
-    <script src="js/main.js"></script>
+    <div id="app">
+      <p>{{ feedback }}</p>
+
+      <ul class="star-rating">
+        <li v-on:mouseover="starOver(1)">Star 1</li>
+        <li v-on:mouseover="starOver(2)">Star 2</li>
+        <li v-on:mouseover="starOver(3)">Star 3</li>
+        <li v-on:mouseover="starOver(4)">Star 4</li>
+        <li v-on:mouseover="starOver(5)">Star 5</li>
+      </ul>
+
+      <br>
+
+      <input type="text">
+      <input type="text">
+
+      <a v-on:click.prevent="btnOpen" href="" class="btn-open" :class="{ 'is-expanded': widgetIsExpanded }"></a>
+    </div>
+
+    <script src="dist/js/main.js"></script>
   </body>
 </html>

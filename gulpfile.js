@@ -47,7 +47,13 @@ gulp.task('styles', function() {
     .pipe(cssNano({
       safe: true
     }))
-    .pipe(gulp.dest(path.dist + 'styles'));
+    .pipe(gulp.dest(path.dist + 'styles'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('js', function(){
+  return gulp.src(path.source + 'js/**/*.js')
+    .pipe(gulp.dest(path.dist + 'js'))
 });
 
 gulp.task('clean', require('del').bind(null, [path.dist]));
@@ -60,9 +66,10 @@ gulp.task('clean', require('del').bind(null, [path.dist]));
 gulp.task('watch', function() {
   browserSync.init({
     files: ['**/*.html', '*.html'],
-    proxy: config.devUrl,
+    proxy: devUrl,
   });
-  gulp.watch([path.source + 'scss/**/*'], ['styles']);
+  gulp.watch([path.source + 'styles/**/*'], ['styles']);
+  gulp.watch([path.source + 'js/**/*'], ['js']);
   gulp.watch(['assets/manifest.json'], ['build']);
 });
 
@@ -70,7 +77,7 @@ gulp.task('watch', function() {
 // `gulp build` - Run all the build tasks but don't clean up beforehand.
 // Generally you should be running `gulp` instead of `gulp build`.
 gulp.task('build', function(callback) {
-  runSequence('styles', callback);
+  runSequence('styles', ['js'], callback);
 });
 
 // ### Gulp

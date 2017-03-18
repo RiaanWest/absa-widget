@@ -1,0 +1,18 @@
+.btn-open {
+  background: #334499;
+  bottom: 10px;
+  display: block;
+  height: 40px;
+  position: absolute;
+  right: 10px;
+  width: 40px;
+  z-index: 10000000;
+  border-radius: 40px;
+  transition: all .2s;
+
+  &.is-expanded {
+    width: 260px;
+    height: 300px;
+    border-radius: 4px;
+  }
+}
