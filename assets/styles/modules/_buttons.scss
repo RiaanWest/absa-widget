@@ -2,14 +2,15 @@
 .btn-widget-close {
   color: $white;
   display: block;
-  font-size: 20px;
-  height: 40px;
-  line-height: 2.2;
+  font-size: 23px;
+  height: 50px;
+  line-height: 2.4;
   text-align: center;
-  width: 40px;
+  width: 50px;
   bottom: 0;
   position: absolute;
   right: 0;
+  z-index: $zindex-buttons;
 
   &:hover,
   &:focus {

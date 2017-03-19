@@ -8,11 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="dist/styles/main.css">
+
     <script src="dist/js/vendor/vue.js"></script>
+    <script src="https://gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
   </head>
   <body>
     <div id="app">
-      <p>{{ rating }}</p>
+      <p>{{ feedback }}</p>
 
       <div class="feedback-widget" :class="{ 'is-expanded': widgetIsExpanded }">
         <a href="" v-on:click.prevent="widgetOpen" class="btn-widget-open" :class="{ 'is-hidden': widgetIsExpanded }">
@@ -22,25 +25,38 @@
           <span class="icon-close"></span>
         </a>
         <div class="feedback-widget--inner" :class="{ 'is-showing': widgetIsExpanded }">
-          <ul class="star-rating">
-            <li v-on:mouseover="starOver(1)">
-              <span v-bind:class="[rating >= 1 ? 'icon-star' : 'icon-star-o']"></span>
-            </li>
-            <li v-on:mouseover="starOver(2)">
-              <span v-bind:class="[rating >= 2 ? 'icon-star' : 'icon-star-o']"></span>
-            </li>
-            <li v-on:mouseover="starOver(3)">
-              <span v-bind:class="[rating >= 3 ? 'icon-star' : 'icon-star-o']"></span>
-            </li>
-            <li v-on:mouseover="starOver(4)">
-              <span v-bind:class="[rating >= 4 ? 'icon-star' : 'icon-star-o']"></span>
-            </li>
-            <li v-on:mouseover="starOver(5)">
-              <span v-bind:class="[rating >= 5 ? 'icon-star' : 'icon-star-o']"></span>
-            </li>
-          </ul>
-          <input type="text">
-          <input type="text">
+
+          <div class="feedback-widget--step1" :class="{ 'is-showing': currentStep == 1 }">
+            <h2>Rate this page</h2>
+            <ul class="star-rating" v-on:click="ratingClick">
+              <li v-on:mouseover="starOver(1)">
+                <span v-bind:class="[review.rating >= 1 ? 'icon-star' : 'icon-star-o']"></span>
+              </li>
+              <li v-on:mouseover="starOver(2)">
+                <span v-bind:class="[review.rating >= 2 ? 'icon-star' : 'icon-star-o']"></span>
+              </li>
+              <li v-on:mouseover="starOver(3)">
+                <span v-bind:class="[review.rating >= 3 ? 'icon-star' : 'icon-star-o']"></span>
+              </li>
+              <li v-on:mouseover="starOver(4)">
+                <span v-bind:class="[review.rating >= 4 ? 'icon-star' : 'icon-star-o']"></span>
+              </li>
+              <li v-on:mouseover="starOver(5)">
+                <span v-bind:class="[review.rating >= 5 ? 'icon-star' : 'icon-star-o']"></span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="feedback-widget--step2" :class="{ 'is-showing': currentStep == 2 }">
+            <form id="form" v-on:submit.prevent="submitForm">
+              <input type="text" v-model="review.name" placeholder="Name">
+              <input type="email" v-model="review.email" placeholder="email@email.com">
+              <textarea cols="30" rows="3" v-model="review.feedback"></textarea>
+              <input type="submit" value="Submit your review">
+            </form>
+          </div>
+
+
         </div>
       </div>
 

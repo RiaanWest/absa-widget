@@ -5,9 +5,9 @@
   right: 10px;
   transition: all .2s;
   z-index: $zindex-widget;
-  border-radius: 40px;
-  height: 40px;
-  width: 40px;
+  border-radius: 50px;
+  height: 50px;
+  width: 50px;
 
   &.is-expanded {
     width: 260px;
@@ -20,9 +20,22 @@
 .feedback-widget--inner {
   visibility: hidden;
   opacity: 0;
+  transition: all 0s 0s;
 
   &.is-showing {
     opacity: 1;
     visibility: visible;
+    transition: all .2s .3s;
+  }
+}
+
+.feedback-widget--step1,
+.feedback-widget--step2 {
+  visibility: hidden;
+  opacity: 0;
+
+  &.is-showing {
+    visibility: visible;
+    opacity: 1;
   }
 }
