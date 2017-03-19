@@ -1,3 +1,16 @@
+//Transitions
+.step-swap-enter-active {
+  transition: all 2.9s ease;
+}
+.step-swap-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.step-swap-enter, .step-swap-leave-to
+/* .slide-fade-leave-active for <2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
 .feedback-widget {
   background: $brand-primary;
   bottom: 10px;
@@ -8,12 +21,17 @@
   border-radius: 50px;
   height: 50px;
   width: 50px;
+  box-shadow: 0 4px 30px rgba($black, .2);
+
+  &:hover {
+    box-shadow: 0 4px 30px rgba($black, .4);
+  }
 
   &.is-expanded {
-    width: 260px;
-    height: 300px;
+    width: 320px;
+    height: 360px;
     border-radius: 4px;
-    cursor: default;
+    box-shadow: 0 4px 30px rgba($black, .2);
   }
 }
 
@@ -21,6 +39,7 @@
   visibility: hidden;
   opacity: 0;
   transition: all 0s 0s;
+  padding: 26px;
 
   &.is-showing {
     opacity: 1;
@@ -31,8 +50,9 @@
 
 .feedback-widget--step1,
 .feedback-widget--step2 {
-  visibility: hidden;
-  opacity: 0;
+  //visibility: hidden;
+  //opacity: 0;
+  transition: .2s;
 
   &.is-showing {
     visibility: visible;

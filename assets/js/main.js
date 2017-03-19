@@ -31,6 +31,7 @@ new Vue({
     },
     widgetClose: function() {
       this.widgetIsExpanded = false;
+      this.currentStep = 1;
     },
     starOver: function(value) {
       this.review.rating = value;
