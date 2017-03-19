@@ -11,10 +11,13 @@
   position: absolute;
   right: 0;
   z-index: $zindex-buttons;
+  border-radius: 50px;
+  transition: all .15s;
 
   &:hover,
   &:focus {
     text-decoration: none;
+    color: $white;
   }
 }
 
