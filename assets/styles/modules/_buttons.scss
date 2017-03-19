@@ -1,0 +1,35 @@
+.btn-widget-open,
+.btn-widget-close {
+  color: $white;
+  display: block;
+  font-size: 20px;
+  height: 40px;
+  line-height: 2.2;
+  text-align: center;
+  width: 40px;
+  bottom: 0;
+  position: absolute;
+  right: 0;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.btn-widget-open {
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.btn-widget-close {
+  opacity: 0;
+  visibility: hidden;
+
+  &.is-showing {
+    opacity: 1;
+    visibility: visible;
+  }
+}

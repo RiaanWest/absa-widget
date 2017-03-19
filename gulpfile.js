@@ -56,6 +56,11 @@ gulp.task('js', function(){
     .pipe(gulp.dest(path.dist + 'js'))
 });
 
+gulp.task('fonts', function(){
+  return gulp.src(path.source + 'fonts/**/*.*')
+    .pipe(gulp.dest(path.dist + 'fonts'))
+});
+
 gulp.task('clean', require('del').bind(null, [path.dist]));
 
 // ### Watch
@@ -70,6 +75,7 @@ gulp.task('watch', function() {
   });
   gulp.watch([path.source + 'styles/**/*'], ['styles']);
   gulp.watch([path.source + 'js/**/*'], ['js']);
+  gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
   gulp.watch(['assets/manifest.json'], ['build']);
 });
 
@@ -77,7 +83,7 @@ gulp.task('watch', function() {
 // `gulp build` - Run all the build tasks but don't clean up beforehand.
 // Generally you should be running `gulp` instead of `gulp build`.
 gulp.task('build', function(callback) {
-  runSequence('styles', ['js'], callback);
+  runSequence('styles', ['js', 'fonts'], callback);
 });
 
 // ### Gulp

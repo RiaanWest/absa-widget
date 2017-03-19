@@ -5,6 +5,9 @@
   > li {
     float: left;
     list-style: none;
+    font-size: 20px;
+    color: $white;
+    cursor: pointer;
 
     + li {
       margin-left: 5px;

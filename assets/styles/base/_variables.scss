@@ -45,6 +45,11 @@ $enable-print-styles:       true;
 $body-bg:                   #f7f7f7;
 $body-color:                $gray-50;
 
+// Z-indexes
+// ----------------------------
+$zindex-overlay:            100000;
+$zindex-widget:             100010;
+
 // Links
 // ----------------------------
 $link-color:                $brand-primary;

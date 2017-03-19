@@ -12,22 +12,39 @@
   </head>
   <body>
     <div id="app">
-      <p>{{ feedback }}</p>
+      <p>{{ rating }}</p>
 
-      <ul class="star-rating">
-        <li v-on:mouseover="starOver(1)">Star 1</li>
-        <li v-on:mouseover="starOver(2)">Star 2</li>
-        <li v-on:mouseover="starOver(3)">Star 3</li>
-        <li v-on:mouseover="starOver(4)">Star 4</li>
-        <li v-on:mouseover="starOver(5)">Star 5</li>
-      </ul>
+      <div class="feedback-widget" :class="{ 'is-expanded': widgetIsExpanded }">
+        <a href="" v-on:click.prevent="widgetOpen" class="btn-widget-open" :class="{ 'is-hidden': widgetIsExpanded }">
+          <span class="icon-comment"></span>
+        </a>
+        <a href="" v-on:click.prevent="widgetClose" class="btn-widget-close" :class="{ 'is-showing': widgetIsExpanded }">
+          <span class="icon-close"></span>
+        </a>
+        <div class="feedback-widget--inner" :class="{ 'is-showing': widgetIsExpanded }">
+          <ul class="star-rating">
+            <li v-on:mouseover="starOver(1)">
+              <span v-bind:class="[rating >= 1 ? 'icon-star' : 'icon-star-o']"></span>
+            </li>
+            <li v-on:mouseover="starOver(2)">
+              <span v-bind:class="[rating >= 2 ? 'icon-star' : 'icon-star-o']"></span>
+            </li>
+            <li v-on:mouseover="starOver(3)">
+              <span v-bind:class="[rating >= 3 ? 'icon-star' : 'icon-star-o']"></span>
+            </li>
+            <li v-on:mouseover="starOver(4)">
+              <span v-bind:class="[rating >= 4 ? 'icon-star' : 'icon-star-o']"></span>
+            </li>
+            <li v-on:mouseover="starOver(5)">
+              <span v-bind:class="[rating >= 5 ? 'icon-star' : 'icon-star-o']"></span>
+            </li>
+          </ul>
+          <input type="text">
+          <input type="text">
+        </div>
+      </div>
 
-      <br>
-
-      <input type="text">
-      <input type="text">
-
-      <a v-on:click.prevent="btnOpen" href="" class="btn-open" :class="{ 'is-expanded': widgetIsExpanded }"></a>
+      <div class="overlay":class="{ 'is-showing': widgetIsExpanded }"></div>
     </div>
 
     <script src="dist/js/main.js"></script>

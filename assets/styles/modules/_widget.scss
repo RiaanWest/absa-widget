@@ -1,0 +1,28 @@
+.feedback-widget {
+  background: $brand-primary;
+  bottom: 10px;
+  position: absolute;
+  right: 10px;
+  transition: all .2s;
+  z-index: $zindex-widget;
+  border-radius: 40px;
+  height: 40px;
+  width: 40px;
+
+  &.is-expanded {
+    width: 260px;
+    height: 300px;
+    border-radius: 4px;
+    cursor: default;
+  }
+}
+
+.feedback-widget--inner {
+  visibility: hidden;
+  opacity: 0;
+
+  &.is-showing {
+    opacity: 1;
+    visibility: visible;
+  }
+}
