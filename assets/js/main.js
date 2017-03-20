@@ -14,7 +14,8 @@ new Vue({
   data: {
     feedback: 'Hello World!',
     widgetIsExpanded: false,
-    currentStep: 1,
+    currentStep: 0,
+    formSubmitAttempted: false,
     review: {
       rating: 0,
       name: '',
@@ -27,11 +28,15 @@ new Vue({
   },
   methods: {
     widgetOpen: function(e) {
+      var vi = this;
       this.widgetIsExpanded = true;
+      setTimeout(function() {
+        vi.currentStep = 1;
+      }, 600);
     },
     widgetClose: function() {
       this.widgetIsExpanded = false;
-      this.currentStep = 1;
+      this.currentStep = 0;
     },
     starOver: function(value) {
       this.review.rating = value;
@@ -41,6 +46,7 @@ new Vue({
     },
     submitForm: function () {
       this.feedback = 'Click';
+      this.formSubmitAttempted = true;
       if (this.isValid) {
         reviewsRef.push(this.review)
         this.review.name = ''
@@ -56,7 +62,9 @@ new Vue({
       }
     },
     isValid: function () {
-      var validation = this.validation
+      var validation = this.validation;
+      console.log(validation);
+      this.feedback = validation.name;
       return Object.keys(validation).every(function (key) {
         return validation[key]
       })

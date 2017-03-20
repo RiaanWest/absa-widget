@@ -4,7 +4,7 @@
   display: block;
   font-size: 23px;
   height: 50px;
-  line-height: 2.4;
+  line-height: 2.5;
   text-align: center;
   width: 50px;
   bottom: 0;
@@ -12,12 +12,15 @@
   right: 0;
   z-index: $zindex-buttons;
   border-radius: 50px;
-  transition: all .15s;
+  transition: transform .3s;
+  transition-timing-function: cubic-bezier(0.06, 0.71, 0.16, 1.95);
+  background: $brand-secondary;
 
   &:hover,
   &:focus {
     text-decoration: none;
     color: $white;
+    transform: scale(1.1);
   }
 }
 
@@ -26,11 +29,17 @@
     opacity: 0;
     visibility: hidden;
   }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+  }
 }
 
 .btn-widget-close {
   opacity: 0;
   visibility: hidden;
+  background: transparent;
 
   &.is-showing {
     opacity: 1;

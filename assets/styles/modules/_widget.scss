@@ -12,7 +12,7 @@
 }
 
 .feedback-widget {
-  background: $brand-primary;
+  background: $brand-secondary;
   bottom: 10px;
   position: absolute;
   right: 10px;
@@ -22,16 +22,22 @@
   height: 50px;
   width: 50px;
   box-shadow: 0 4px 30px rgba($black, .2);
+  text-align: center;
 
   &:hover {
     box-shadow: 0 4px 30px rgba($black, .4);
   }
 
   &.is-expanded {
-    width: 320px;
-    height: 360px;
     border-radius: 4px;
     box-shadow: 0 4px 30px rgba($black, .2);
+    height: 450px;
+    width: calc(100% - 20px);
+
+    @include media-breakpoint-up(sm) {
+      height: 450px;
+      width: 370px;
+    }
   }
 }
 

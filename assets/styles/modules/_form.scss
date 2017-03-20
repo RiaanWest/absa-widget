@@ -3,11 +3,16 @@ input[type="email"],
 textarea,
 select {
   padding: 12px;
-  border: 1px solid $gray-10;
+  border: 2px solid $gray-10;
   background-color: #ffffff;
   border-radius: .25em;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
   width: 100%;
+  transition: all .25s;
+
+  &.error {
+    border: 2px solid $red;
+  }
 }
 
 .input-with-icon {
@@ -35,7 +40,7 @@ select {
 }
 
 .input-name {
-  @extend .icon-name;
+  @extend .icon-avatar;
 }
 
 .input-email {
@@ -43,5 +48,50 @@ select {
 }
 
 .input-message {
-  @extend .icon-message;
+  @extend .icon-talk;
+}
+
+.btn {
+  background: transparent;
+  border: 2px solid $white;
+  color: $white;
+  min-width: 150px;
+  overflow: hidden;
+  padding: 1em 2em;
+  position: relative;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+  transition: border-color .3s, color 0.3s;
+  vertical-align: middle;
+  cursor: pointer;
+
+  &:before {
+    background: $brand-primary;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: rotate3d(0, 0, 1, -40deg) translate3d(0, -3em, 0);
+    transform-origin: 0% 100%;
+    transition: transform .3s, opacity .3s, background-color .3s;
+    width: 150%;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: $white;
+    border-color: $brand-primary;
+
+    &:before {
+      background-color: $brand-primary;
+      opacity: 1;
+      transform: rotate3d(0, 0, 1, 0deg);
+      transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+    }
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
 }
