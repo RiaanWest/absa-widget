@@ -86,7 +86,7 @@
         </div>
       </div>
 
-      <div class="overlay":class="{ 'is-showing': widgetIsExpanded }"></div>
+      <div v-on:click.prevent="widgetClose" class="overlay":class="{ 'is-showing': widgetIsExpanded }"></div>
     </div>
 
     <script src="dist/js/main.js"></script>
