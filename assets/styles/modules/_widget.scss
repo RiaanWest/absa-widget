@@ -1,13 +1,12 @@
 //Transitions
 .step-swap-enter-active {
-  transition: all 2.9s ease;
+  transition: all .4s ease;
 }
 .step-swap-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
-.step-swap-enter, .step-swap-leave-to
-/* .slide-fade-leave-active for <2.1.8 */ {
-  transform: translateX(10px);
+.step-swap-enter, .step-swap-leave-to {
+  transform: translateX(15px);
   opacity: 0;
 }
 
@@ -16,7 +15,8 @@
   bottom: 10px;
   position: absolute;
   right: 10px;
-  transition: all .2s;
+  transition: all .5s;
+  transition-timing-function: cubic-bezier(.67,.02,.33,.94);
   z-index: $zindex-widget;
   border-radius: 50px;
   height: 50px;
@@ -33,12 +33,21 @@
     box-shadow: 0 4px 30px rgba($black, .2);
     height: 450px;
     width: calc(100% - 20px);
+    transition: all .2s;
 
     @include media-breakpoint-up(sm) {
       height: 450px;
       width: 370px;
     }
   }
+}
+
+.feedback-widget--title {
+  margin: 11px 0 28px;
+}
+
+.feedback-widget--intro {
+  font-size: 17px;
 }
 
 .feedback-widget--inner {
@@ -51,17 +60,5 @@
     opacity: 1;
     visibility: visible;
     transition: all .2s .3s;
-  }
-}
-
-.feedback-widget--step1,
-.feedback-widget--step2 {
-  //visibility: hidden;
-  //opacity: 0;
-  transition: .2s;
-
-  &.is-showing {
-    visibility: visible;
-    opacity: 1;
   }
 }

@@ -32,7 +32,7 @@ new Vue({
       this.widgetIsExpanded = true;
       setTimeout(function() {
         vi.currentStep = 1;
-      }, 600);
+      }, 400);
     },
     widgetClose: function() {
       this.widgetIsExpanded = false;
@@ -45,12 +45,13 @@ new Vue({
       this.currentStep = 2;
     },
     submitForm: function () {
-      this.feedback = 'Click';
       this.formSubmitAttempted = true;
+
       if (this.isValid) {
-        reviewsRef.push(this.review)
-        this.review.name = ''
-        this.review.email = ''
+        reviewsRef.push(this.review);
+        this.review.name = '';
+        this.review.email = '';
+        this.currentStep = 3;
       }
     },
   },

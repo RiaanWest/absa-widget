@@ -13,7 +13,7 @@
   z-index: $zindex-buttons;
   border-radius: 50px;
   transition: transform .3s;
-  transition-timing-function: cubic-bezier(0.06, 0.71, 0.16, 1.95);
+  transition-timing-function: cubic-bezier(.06, .71, .16, 1.95);
   background: $brand-secondary;
 
   &:hover,

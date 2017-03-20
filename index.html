@@ -29,9 +29,9 @@
 
           <transition name="step-swap" mode="out-in">
 
-            <div v-if="currentStep == 1" key="step" class="feedback-widget--step1">
-              <h2>Please rate this page</h2>
-              <p>We would love your feedback</p>
+            <div v-if="currentStep == 1" key="step">
+              <h2 class="feedback-widget--title">Please rate this page</h2>
+              <p class="feedback-widget--intro">We would love your feedback</p>
               <ul class="star-rating" v-on:click="ratingClick">
                 <li v-on:mouseover="starOver(1)">
                   <span v-bind:class="[review.rating >= 1 ? 'icon-heart-full' : 'icon-heart']"></span>
@@ -51,8 +51,8 @@
               </ul>
             </div>
 
-            <div v-if="currentStep === 2" class="feedback-widget--step2">
-              <h2>Tell us a bit about yourself</h2>
+            <div v-if="currentStep === 2">
+              <h2 class="feedback-widget--title">Tell us a bit about yourself</h2>
               <form id="form" v-on:submit.prevent="submitForm">
                 <p class="input-with-icon input-name">
                   <input
@@ -75,6 +75,11 @@
                 </p>
                 <button class="btn" type="submit">Submit your review</button>
               </form>
+            </div>
+
+            <div v-if="currentStep === 3" key="step">
+              <h2 class="feedback-widget--title">Thank you</h2>
+              <h4>We appreciate your time</h4>
             </div>
           </transition>
 
