@@ -3,13 +3,9 @@
 $white:                     #fff;
 $black:                     #000;
 $red:                       #d9534f;
-$orange:                    #f0ad4e;
-$yellow:                    #ffd500;
-$green:                     #5cb85c;
 $blue:                      #3f51b5;
-$teal:                      #5bc0de;
-$pink:                      #ff5b77;
-$purple:                    #7986cb;
+$pink:                      #ff2366;
+$purple:                    #8e4de8;
 
 $gray-90:                   lighten($black, 10%);
 $gray-80:                   lighten($black, 20%);
@@ -21,13 +17,8 @@ $gray-30:                   lighten($black, 70%);
 $gray-20:                   lighten($black, 80%);
 $gray-10:                   lighten($black, 90%);
 
-$brand-primary:             $blue;
+$brand-primary:             $pink;
 $brand-secondary:           $purple;
-$brand-success:             $green;
-$brand-info:                $teal;
-$brand-warning:             $orange;
-$brand-danger:              $red;
-$brand-inverse:             $gray-80;
 
 
 // Options
@@ -83,12 +74,12 @@ $font-size-large:         19px;
 $font-size-small:         10px;
 
 $headings-font-family:    $font-family-sans-serif;
-$headings-font-weight:    400;
+$headings-font-weight:    700;
 $headings-line-height:    1.3;
 $headings-color:          inherit;
 
 $font-size-h1:            42px;
-$font-size-h2:            26px;
+$font-size-h2:            29px;
 $font-size-h3:            26px;
 $font-size-h4:            22px;
 $font-size-h5:            19px;
