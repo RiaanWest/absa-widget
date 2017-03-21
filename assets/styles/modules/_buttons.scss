@@ -28,6 +28,7 @@
 .btn-widget-open {
   bottom: 10px;
   right: 10px;
+  position: fixed;
   transition: opacity .2s .4s, transform .3s;
 
   &.is-hidden {
