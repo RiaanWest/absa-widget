@@ -1,16 +1,20 @@
-.overlay {
-  background: rgba($blue-gray, .9);
-  z-index: $zindex-overlay;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: all .2s .3s;
+.feedback-widget-wrapper {
+  .overlay {
+    background: rgba($blue-gray, .9);
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: all .2s .3s;
+    visibility: hidden;
+    width: 100%;
+    z-index: $zindex-overlay;
 
-  &.is-showing {
-    opacity: 1;
-    transition: all .2s;
+    &.is-showing {
+      opacity: 1;
+      transition: all .2s;
+      visibility: visible;
+    }
   }
 }

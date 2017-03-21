@@ -1,102 +1,104 @@
-input[type="text"],
-input[type="email"],
-textarea,
-select {
-  padding: 12px;
-  border: 2px solid $gray-10;
-  background-color: #ffffff;
-  border-radius: .25em;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
-  width: 100%;
-  transition: all .25s;
+.feedback-widget-wrapper {
+  input[type="text"],
+  input[type="email"],
+  textarea,
+  select {
+    background-color: $white;
+    border: 2px solid $gray-10;
+    border-radius: .25em;
+    box-shadow: inset 0 1px 1px rgba($black, .08);
+    padding: 12px;
+    transition: all .25s;
+    width: 100%;
 
-  &.error {
-    border: 2px solid $red;
-  }
+    &.error {
+      border: 2px solid $purple-dark;
+    }
 
-  &::placeholder {
-    color: $gray-20;
-  }
-}
-
-.input-with-icon {
-  position: relative;
-
-  &:before {
-    color: $gray-30;
-    position: absolute;
-    font-size: 20px;
-    left: 11px;
-    font-family: 'feedback-widget' !important;
-    font-style: normal !important;
-    font-weight: normal !important;
-    font-variant: normal !important;
-    text-transform: none !important;
-    speak: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    line-height: 2.2;
-  }
-
-  .input-field {
-    padding-left: 39px;
-  }
-}
-
-.input-name {
-  @extend .icon-avatar;
-}
-
-.input-email {
-  @extend .icon-email;
-}
-
-.input-message {
-  @extend .icon-talk;
-}
-
-.btn {
-  background: transparent;
-  border: 2px solid $white;
-  color: $white;
-  min-width: 150px;
-  overflow: hidden;
-  padding: 12px 26px;
-  position: relative;
-  transition-timing-function: cubic-bezier(.2, 1, .3, 1);
-  transition: border-color .3s, color 0.3s;
-  vertical-align: middle;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 4px;
-
-  &:before {
-    background: $brand-primary;
-    content: '';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    transform: rotate3d(0, 0, 1, -40deg) translate3d(0, -3em, 0);
-    transform-origin: 0% 100%;
-    transition: transform .3s, opacity .3s, background-color .3s;
-    width: 150%;
-    z-index: -1;
-  }
-
-  &:hover {
-    color: $white;
-    border-color: $brand-primary;
-
-    &:before {
-      background-color: $brand-primary;
-      opacity: 1;
-      transform: rotate3d(0, 0, 1, 0deg);
-      transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+    &::placeholder {
+      color: $gray-20;
     }
   }
 
-  &:active {
-    transform: translateY(2px);
+  .input-with-icon {
+    position: relative;
+
+    &::before {
+      color: $gray-30;
+      font-family: 'feedback-widget' !important;
+      font-size: 20px;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-style: normal !important;
+      font-variant: normal !important;
+      font-weight: normal !important;
+      left: 11px;
+      line-height: 2.2;
+      position: absolute;
+      speak: none;
+      text-transform: none !important;
+    }
+
+    .input-field {
+      padding-left: 39px;
+    }
+  }
+
+  .input-name {
+    @extend .icon-avatar;
+  }
+
+  .input-email {
+    @extend .icon-email;
+  }
+
+  .input-message {
+    @extend .icon-talk;
+  }
+
+  .btn {
+    background: transparent;
+    border: 2px solid $white;
+    border-radius: 4px;
+    color: $white;
+    cursor: pointer;
+    font-size: 16px;
+    min-width: 150px;
+    overflow: hidden;
+    padding: 12px 26px;
+    position: relative;
+    transition: border-color .3s, color .3s;
+    transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+    vertical-align: middle;
+
+    &::before {
+      background: $brand-primary;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transform: rotate3d(0, 0, 1, -40deg) translate3d(0, -3em, 0);
+      transform-origin: 0% 100%;
+      transition: transform .3s, opacity .3s, background-color .3s;
+      width: 150%;
+      z-index: -1;
+    }
+
+    &:hover {
+      border-color: $brand-primary;
+      color: $white;
+
+      &::before {
+        background-color: $brand-primary;
+        opacity: 1;
+        transform: rotate3d(0, 0, 1, 0deg);
+        transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+      }
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
   }
 }

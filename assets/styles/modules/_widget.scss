@@ -1,13 +1,16 @@
 //Transitions
 .step-swap-enter-active {
-  transition: all .4s ease;
+  transition: all .6s cubic-bezier(0, .5, .5, 1);
 }
+
 .step-swap-leave-active {
-  transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all .3s cubic-bezier(.5, 0, 1, .7);
 }
-.step-swap-enter, .step-swap-leave-to {
-  transform: translateX(15px);
+
+.step-swap-enter,
+.step-swap-leave-to {
   opacity: 0;
+  transform: translateY(15px);
 }
 
 .feedback-widget {
@@ -21,7 +24,7 @@
   position: absolute;
   right: 10px;
   text-align: center;
-  transition: all .4s;
+  transition: all .3s;
   transition-timing-function: cubic-bezier(.71, .1, .49, .99);
   width: 50px;
   z-index: $zindex-widget;
@@ -34,9 +37,9 @@
     border-radius: 4px;
     box-shadow: 0 4px 30px rgba($black, .2);
     height: calc(100% - 20px);
-    width: calc(100% - 20px);
     transition: all .4s;
     transition-timing-function: cubic-bezier(.11, .8, .36, 1);
+    width: calc(100% - 20px);
 
     @include media-breakpoint-up(sm) {
       height: 450px;
@@ -51,15 +54,16 @@
 
 .feedback-widget--intro {
   font-size: 17px;
+  margin-bottom: 35px;
 }
 
 .feedback-widget--inner {
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0s 0s;
-  padding: 26px;
-  overflow: scroll;
   height: calc(100% - 45px);
+  opacity: 0;
+  overflow: scroll;
+  padding: 26px;
+  transition: all 0s 0s;
+  visibility: hidden;
 
   @include media-breakpoint-up(sm) {
     height: auto;
@@ -68,7 +72,7 @@
 
   &.is-showing {
     opacity: 1;
-    visibility: visible;
     transition: all .2s .3s;
+    visibility: visible;
   }
 }

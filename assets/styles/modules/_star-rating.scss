@@ -1,20 +1,21 @@
-.star-rating {
-  margin: 0;
-  padding: 0;
-  border: 1px solid rgba($white, .5);
-  border-radius: 3px;
-  padding: 17px 22px 8px;
-  display: inline-block;
-
-  > li {
+.feedback-widget-wrapper {
+  .star-rating {
+    border: 1px solid rgba($white, .5);
+    border-radius: 3px;
     display: inline-block;
-    list-style: none;
-    font-size: 29px;
-    color: $white;
-    cursor: pointer;
+    margin: 0;
+    padding: 17px 22px 8px;
 
-    + li {
-      margin-left: 5px;
+    > li {
+      color: $white;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 29px;
+      list-style: none;
+
+      + li {
+        margin-left: 5px;
+      }
     }
   }
 }

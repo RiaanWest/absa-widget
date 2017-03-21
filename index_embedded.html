@@ -1,0 +1,28 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Feedback Widget: Embed Test</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+    <h1>There's some content on this page</h1>
+
+    <div id="feedback-widget"></div>
+    <script>
+      (function (window, document) {
+        var loader = function () {
+          var embedTarget = document.getElementById('feedback-widget');
+          var script = document.createElement("script");
+          script.type = "text/javascript";
+          script.src = "./assets/js/main.js";
+          embedTarget.parentNode.insertBefore(script, embedTarget);
+        };
+        window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+      })(window, document);
+    </script>
+  </body>
+</html>
