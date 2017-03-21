@@ -12,86 +12,88 @@
 
 }
 
-[data-icon]:before {
-  font-family: 'feedback-widget' !important;
-  content: attr(data-icon);
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+.feedback-widget-wrapper {
+  [data-icon]:before {
+    font-family: 'feedback-widget' !important;
+    content: attr(data-icon);
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-[class^='icon-']:before,
-[class*=' icon-']:before {
-  font-family: 'feedback-widget' !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  [class^='icon-']:before,
+  [class*=' icon-']:before {
+    font-family: 'feedback-widget' !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-.icon-star:before {
-  content: '\61';
-}
+  .icon-star:before {
+    content: '\61';
+  }
 
-.icon-star-half-o:before {
-  content: '\63';
-}
+  .icon-star-half-o:before {
+    content: '\63';
+  }
 
-.icon-star-o:before {
-  content: '\62';
-}
+  .icon-star-o:before {
+    content: '\62';
+  }
 
-.icon-comment:before {
-  content: '\64';
-}
+  .icon-comment:before {
+    content: '\64';
+  }
 
-.icon-close:before {
-  content: '\66';
-}
+  .icon-close:before {
+    content: '\66';
+  }
 
-.icon-name:before {
-  content: '\65';
-}
+  .icon-name:before {
+    content: '\65';
+  }
 
-.icon-email:before {
-  content: '\67';
-}
+  .icon-email:before {
+    content: '\67';
+  }
 
-.icon-message:before {
-  content: '\68';
-}
+  .icon-message:before {
+    content: '\68';
+  }
 
 
-.icon-heart:before {
-  content: "\69";
-}
-.icon-talk:before {
-  content: "\6a";
-}
-.icon-bubble:before {
-  content: "\6b";
-}
-.icon-avatar:before {
-  content: "\6c";
-}
-.icon-email:before {
-  content: "\6d";
-}
-.icon-arrow-right:before {
-  content: "\6e";
-}
-.icon-arrow-left:before {
-  content: "\6f";
-}
-.icon-heart-full:before {
-  content: "\70";
+  .icon-heart:before {
+    content: "\69";
+  }
+  .icon-talk:before {
+    content: "\6a";
+  }
+  .icon-bubble:before {
+    content: "\6b";
+  }
+  .icon-avatar:before {
+    content: "\6c";
+  }
+  .icon-email:before {
+    content: "\6d";
+  }
+  .icon-arrow-right:before {
+    content: "\6e";
+  }
+  .icon-arrow-left:before {
+    content: "\6f";
+  }
+  .icon-heart-full:before {
+    content: "\70";
+  }
 }

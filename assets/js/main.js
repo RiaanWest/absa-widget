@@ -86,6 +86,7 @@
           this.currentStep = 2;
         },
         submitForm: function () {
+          var vi = this;
           this.formSubmitAttempted = true;
           this.setURL();
 
@@ -94,14 +95,16 @@
             this.review.name = '';
             this.review.email = '';
             this.currentStep = 3;
+
+            setTimeout(function() {
+              vi.widgetClose();
+            }, 4000);
           }
         },
         setURL: function() {
           this.review.url = (window.location != window.parent.location)
             ? document.referrer
             : document.location.href;
-          console.log(this.review.url);
-
         }
       },
       computed: {

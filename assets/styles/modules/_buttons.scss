@@ -1,38 +1,38 @@
 .btn-widget-open,
 .btn-widget-close {
+  background: $pink;
+  border-radius: 50px;
+  bottom: 0;
   color: $white;
   display: block;
   font-size: 23px;
   height: 50px;
   line-height: 2.5;
-  text-align: center;
-  width: 50px;
-  bottom: 0;
   position: absolute;
   right: 0;
-  z-index: $zindex-buttons;
-  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
   transition: transform .3s;
   transition-timing-function: cubic-bezier(.06, .71, .16, 1.95);
-  background: $pink;
+  width: 50px;
+  z-index: $zindex-buttons;
 
   &:hover,
   &:focus {
-    text-decoration: none;
     color: $white;
+    text-decoration: none;
     transform: scale(1.1);
   }
 }
 
 .btn-widget-open {
-  transition: opacity .2s .6s, transform .3s;
-  right: 10px;
   bottom: 10px;
+  right: 10px;
+  transition: opacity .2s .4s, transform .3s;
 
   &.is-hidden {
     opacity: 0;
     visibility: hidden;
-    //transition: opacity .3s 1s;
   }
 
   &:hover,
@@ -42,9 +42,9 @@
 }
 
 .btn-widget-close {
+  background: transparent;
   opacity: 0;
   visibility: hidden;
-  background: transparent;
 
   &.is-showing {
     opacity: 1;
