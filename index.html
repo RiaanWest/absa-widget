@@ -6,87 +6,9 @@
     <title>Feedback Widget</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href="https://fonts.googleapis.com/css?family=Nunito|Nunito+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="dist/styles/main.css">
-
-    <script src="dist/js/vendor/vue.js"></script>
-    <script src="https://gstatic.com/firebasejs/3.5.2/firebase.js"></script>
-    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
   </head>
   <body>
-    <div id="app">
-      <a href="" v-on:click.prevent="widgetOpen" class="btn-widget-open" :class="{ 'is-hidden': widgetIsExpanded }">
-        <span class="icon-bubble"></span>
-      </a>
-      <div class="feedback-widget" :class="{ 'is-expanded': widgetIsExpanded }">
-        <a href="" v-on:click.prevent="widgetClose" class="btn-widget-close" :class="{ 'is-showing': widgetIsExpanded }">
-          <span class="icon-close"></span>
-        </a>
-        <div class="feedback-widget--inner" :class="{ 'is-showing': widgetIsExpanded }">
-
-          <transition name="step-swap" mode="out-in">
-
-            <div v-if="currentStep == 1" key="step">
-              <h2 class="feedback-widget--title">Please rate this page</h2>
-              <p class="feedback-widget--intro">We would love your feedback</p>
-              <ul class="star-rating" v-on:click="ratingClick">
-                <li v-on:mouseover="starOver(1)">
-                  <span v-bind:class="[review.rating >= 1 ? 'icon-heart-full' : 'icon-heart']"></span>
-                </li>
-                <li v-on:mouseover="starOver(2)">
-                  <span v-bind:class="[review.rating >= 2 ? 'icon-heart-full' : 'icon-heart']"></span>
-                </li>
-                <li v-on:mouseover="starOver(3)">
-                  <span v-bind:class="[review.rating >= 3 ? 'icon-heart-full' : 'icon-heart']"></span>
-                </li>
-                <li v-on:mouseover="starOver(4)">
-                  <span v-bind:class="[review.rating >= 4 ? 'icon-heart-full' : 'icon-heart']"></span>
-                </li>
-                <li v-on:mouseover="starOver(5)">
-                  <span v-bind:class="[review.rating >= 5 ? 'icon-heart-full' : 'icon-heart']"></span>
-                </li>
-              </ul>
-            </div>
-
-            <div v-if="currentStep === 2">
-              <h2 class="feedback-widget--title">Tell us a bit about yourself</h2>
-              <form id="form" v-on:submit.prevent="submitForm">
-                <p class="input-with-icon input-name">
-                  <input
-                    class="input-field"
-                    type="text"
-                    v-model="review.name"
-                    v-bind:class="[!validation.name && formSubmitAttempted ? 'error' : 'is-valid']"
-                    placeholder="Name" />
-                </p>
-                <p class="input-with-icon input-email">
-                  <input
-                    class="input-field"
-                    type="email"
-                    v-model="review.email"
-                    v-bind:class="[!validation.email && formSubmitAttempted ? 'error' : 'is-valid']"
-                    placeholder="email@email.com">
-                </p>
-                <p class="input-with-icon input-message">
-                  <textarea class="input-field" cols="30" rows="3" v-model="review.feedback"></textarea>
-                </p>
-                <button class="btn" type="submit">Submit your review</button>
-              </form>
-            </div>
-
-            <div v-if="currentStep === 3" key="step">
-              <h2 class="feedback-widget--title">Thank you</h2>
-              <h4>We appreciate your time</h4>
-            </div>
-          </transition>
-
-        </div>
-      </div>
-
-      <div v-on:click.prevent="widgetClose" class="overlay":class="{ 'is-showing': widgetIsExpanded }"></div>
-    </div>
-
+    <div id="feedback-widget"></div>
     <script src="dist/js/main.js"></script>
   </body>
 </html>
