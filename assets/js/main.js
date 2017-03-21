@@ -12,7 +12,6 @@ var reviewsRef = firebaseApp.database().ref('reviews');
 new Vue({
   el: '#app',
   data: {
-    feedback: 'Hello World!',
     widgetIsExpanded: false,
     currentStep: 0,
     formSubmitAttempted: false,
@@ -20,7 +19,8 @@ new Vue({
       rating: 0,
       name: '',
       email: '',
-      feedback: ''
+      feedback: '',
+      url: ''
     }
   },
   firebase: {
@@ -46,6 +46,7 @@ new Vue({
     },
     submitForm: function () {
       this.formSubmitAttempted = true;
+      this.setURL();
 
       if (this.isValid) {
         reviewsRef.push(this.review);
@@ -54,6 +55,13 @@ new Vue({
         this.currentStep = 3;
       }
     },
+    setURL: function() {
+      this.review.url = (window.location != window.parent.location)
+        ? document.referrer
+        : document.location.href;
+      console.log(this.review.url);
+
+    }
   },
   computed: {
     validation: function () {

@@ -11,20 +11,20 @@
 }
 
 .feedback-widget {
-  background: #8e4de8;
+  background: $purple;
+  background: linear-gradient(45deg, $purple 0%, $pink 90%);
+  border-radius: 50px;
   bottom: 10px;
+  box-shadow: 0 4px 30px rgba($black, .2);
+  height: 50px;
+  overflow: hidden;
   position: absolute;
   right: 10px;
-  transition: all .5s;
-  transition-timing-function: cubic-bezier(.67,.02,.33,.94);
-  z-index: $zindex-widget;
-  border-radius: 50px;
-  height: 50px;
-  width: 50px;
-  box-shadow: 0 4px 30px rgba($black, .2);
   text-align: center;
-  background: linear-gradient(45deg, $purple 0%, $pink 90%);
-
+  transition-timing-function: cubic-bezier(.67,.02,.33,.94);
+  transition: all .5s;
+  width: 50px;
+  z-index: $zindex-widget;
 
   &:hover {
     box-shadow: 0 4px 30px rgba($black, .4);
