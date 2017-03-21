@@ -88,7 +88,10 @@
         ratingClick: function() {
           this.currentStep = 2;
         },
-        submitForm: function () {
+        feedbackComplete: function() {
+          this.currentStep = 3;
+        },
+        submitForm: function() {
           var vi = this;
           this.formSubmitAttempted = true;
           this.setURL();
@@ -97,7 +100,7 @@
             reviewsRef.push(this.review);
             this.review.name = '';
             this.review.email = '';
-            this.currentStep = 3;
+            this.currentStep = 4;
 
             setTimeout(function() {
               vi.widgetClose();

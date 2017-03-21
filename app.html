@@ -10,8 +10,9 @@
 
       <transition name="step-swap" mode="out-in">
         <div v-if="currentStep == 1" key="step">
-          <h2 class="feedback-widget--title">Please rate this page</h2>
-          <p class="feedback-widget--intro">We would love your feedback</p>
+          <h1>Well hello!</h1>
+          <h2 class="feedback-widget--title">We would love your input on this page</h2>
+          <p class="feedback-widget--intro">How would you rate it?</p>
           <ul class="star-rating" v-on:click="ratingClick">
             <li v-on:mouseover="starOver(1)">
               <span v-bind:class="[review.rating >= 1 ? 'icon-heart-full' : 'icon-heart']"></span>
@@ -32,6 +33,22 @@
         </div>
 
         <div v-if="currentStep === 2">
+          <h2 class="feedback-widget--title">Next, do you have some feedback / suggestions?</h2>
+          <p class="feedback-widget--intro">This is optional, but highly appreciated</p>
+          <form id="form" v-on:submit.prevent="feedbackComplete">
+            <p class="input-with-icon input-message">
+              <textarea
+                class="input-field"
+                cols="30"
+                rows="3"
+                v-model="review.feedback"
+                placeholder="Your feedback"></textarea>
+            </p>
+            <button class="btn" type="submit">Next</button>
+          </form>
+        </div>
+
+        <div v-if="currentStep === 3" key="step">
           <h2 class="feedback-widget--title">Tell us a bit about yourself</h2>
           <form id="form" v-on:submit.prevent="submitForm">
             <p class="input-with-icon input-name">
@@ -50,22 +67,14 @@
                 v-bind:class="[!validation.email && formSubmitAttempted ? 'error' : 'is-valid']"
                 placeholder="email@email.com">
             </p>
-            <p class="input-with-icon input-message">
-              <textarea
-                class="input-field"
-                cols="30"
-                rows="3"
-                v-model="review.feedback"
-                placeholder="Your feedback"></textarea>
-            </p>
             <button class="btn" type="submit">Submit your review</button>
           </form>
         </div>
 
-        <div v-if="currentStep === 3" key="step">
+        <div v-if="currentStep === 4">
           <h2 class="feedback-widget--title">Thank you!</h2>
-          <h4>We appreciate the time you took to leave us some feedback.</h4>
-          <p>See you around!</p>
+          <h3>We appreciate the time you took to leave us some feedback.</h3>
+          <h4>See you around!</h4>
         </div>
       </transition>
 
