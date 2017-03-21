@@ -21,8 +21,8 @@
   position: absolute;
   right: 10px;
   text-align: center;
-  transition-timing-function: cubic-bezier(.67,.02,.33,.94);
-  transition: all .5s;
+  transition: all .4s;
+  transition-timing-function: cubic-bezier(.71, .1, .49, .99);
   width: 50px;
   z-index: $zindex-widget;
 
@@ -35,7 +35,8 @@
     box-shadow: 0 4px 30px rgba($black, .2);
     height: calc(100% - 20px);
     width: calc(100% - 20px);
-    transition: all .2s;
+    transition: all .4s;
+    transition-timing-function: cubic-bezier(.11, .8, .36, 1);
 
     @include media-breakpoint-up(sm) {
       height: 450px;
