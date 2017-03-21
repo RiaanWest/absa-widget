@@ -35,6 +35,13 @@
     visibility: hidden;
   }
 
+  &.is-bouncing {
+    animation-delay: 3.5s;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-name: button-bounce;
+  }
+
   &:hover,
   &:focus {
     transform: scale(1.2);
@@ -49,5 +56,27 @@
   &.is-showing {
     opacity: 1;
     visibility: visible;
+  }
+}
+
+@keyframes button-bounce {
+  0% {
+    transform: scale(1);
+  }
+
+  8% {
+    transform: scale(1.2);
+  }
+
+  16% {
+    transform: scale(1);
+  }
+
+  24% {
+    transform: scale(1.2);
+  }
+
+  40% {
+    transform: scale(1);
   }
 }

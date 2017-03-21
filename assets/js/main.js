@@ -56,6 +56,7 @@
         widgetIsExpanded: false,
         currentStep: 0,
         formSubmitAttempted: false,
+        openBtnBouncing: true,
         review: {
           rating: 0,
           name: '',
@@ -74,10 +75,12 @@
           setTimeout(function() {
             vi.currentStep = 1;
           }, 400);
+          this.openBtnBouncing = false;
         },
         widgetClose: function() {
           this.widgetIsExpanded = false;
           this.currentStep = 0;
+          this.openBtnBouncing = true;
         },
         starOver: function(value) {
           this.review.rating = value;

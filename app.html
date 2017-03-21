@@ -1,5 +1,5 @@
 <div id="app" class="feedback-widget-wrapper">
-  <a href="" v-on:click.prevent="widgetOpen" class="btn-widget-open" :class="{ 'is-hidden': widgetIsExpanded }">
+  <a href="" v-on:click.prevent="widgetOpen" class="btn-widget-open" :class="[widgetIsExpanded ? 'is-hidden' : '', openBtnBouncing ? 'is-bouncing' : '']">
     <span class="icon-bubble"></span>
   </a>
   <div class="feedback-widget" :class="{ 'is-expanded': widgetIsExpanded }">
@@ -51,7 +51,12 @@
                 placeholder="email@email.com">
             </p>
             <p class="input-with-icon input-message">
-              <textarea class="input-field" cols="30" rows="3" v-model="review.feedback"></textarea>
+              <textarea
+                class="input-field"
+                cols="30"
+                rows="3"
+                v-model="review.feedback"
+                placeholder="Your feedback"></textarea>
             </p>
             <button class="btn" type="submit">Submit your review</button>
           </form>
