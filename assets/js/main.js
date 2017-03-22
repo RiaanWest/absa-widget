@@ -23,7 +23,7 @@
   loadScript('https://code.jquery.com/jquery-2.2.4.min.js', function() {
     $ = jQuery = window.jQuery.noConflict(true);
 
-    loadScript("dist/js/vendor/vue.js", function() {
+    loadScript("https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.0/vue.min.js", function() {
       loadScript("https://gstatic.com/firebasejs/3.5.2/firebase.js", function() {
         loadScript("https://unpkg.com/vuefire/dist/vuefire.js", function() {
           loadHtmlCSS();
@@ -122,7 +122,6 @@
         },
         isValid: function () {
           var validation = this.validation;
-          console.log(validation);
           this.feedback = validation.name;
           return Object.keys(validation).every(function (key) {
             return validation[key]
